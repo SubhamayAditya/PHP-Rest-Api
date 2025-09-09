@@ -30,8 +30,3 @@ if (mysqli_num_rows($result) > 0) {
     echo json_encode(["message" => "No records found"]);
 }
 
-/* Run in url":
-
-http://localhost/php_work_files/php_rest_api/api-fetch-single.php?id=3
-
-*/
