@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: application/json'); 
+header('Content-Type: application/json');
 /* application/json , because i want to allow browser that any third party application 
  who can access this api will identify that data will return as json format */
 
@@ -8,10 +8,10 @@ header('Access-Content-Allow-Origin: *');
 /* "*" means that any kind of application and browser can access this api. 
 Or if i want to add any restriction & add perticular a website then instead of * add that website name  */
 
- include('connection.php');
+include('connection.php');
 
- $sql= "select * from students";
- $result= mysqli_query($conn,$sql);
+$sql = "select * from students";
+$result = mysqli_query($conn, $sql);
 
 
 if (mysqli_num_rows($result) > 0) {
@@ -22,4 +22,3 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo json_encode(["message" => "No records found"]);
 }
-

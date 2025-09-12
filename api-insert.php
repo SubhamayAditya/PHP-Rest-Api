@@ -1,7 +1,7 @@
 <?php
 
-header('Content-Type: application/json'); 
-header('Access-Control-Allow-Origin: *'); 
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
@@ -21,7 +21,7 @@ $city = $data['scity'];
 $sql = "INSERT INTO students (student_name, age, city) VALUES ('{$name}', '{$age}', '{$city}')";
 $result = mysqli_query($conn, $sql);
 
-if ($result) {     
+if ($result) {
     echo json_encode(["message" => "Student record inserted", "status" => true]);
 } else {
     echo json_encode(["message" => "No records inserted", "error" => mysqli_error($conn), "status" => false]);
